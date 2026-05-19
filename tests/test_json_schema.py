@@ -530,7 +530,7 @@ def test_decimal_json_schema():
                     {'type': 'number'},
                     {
                         'type': 'string',
-                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
                     },
                 ],
                 'default': '12.34',
@@ -547,7 +547,7 @@ def test_decimal_json_schema():
                 'default': '12.34',
                 'title': 'B',
                 'type': 'string',
-                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
             },
         },
         'title': 'Model',
@@ -1071,7 +1071,7 @@ def test_special_decimal_types(field_type, expected_schema):
                     {'type': 'number'},
                     {
                         'type': 'string',
-                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
                     },
                 ],
                 'title': 'A',
@@ -2038,7 +2038,7 @@ def test_docstring(docstring, description):
                     {'exclusiveMinimum': 2.0, 'type': 'number'},
                     {
                         'type': 'string',
-                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
                     },
                 ]
             },
@@ -2051,7 +2051,7 @@ def test_docstring(docstring, description):
                     {'type': 'number', 'exclusiveMaximum': 5},
                     {
                         'type': 'string',
-                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
                     },
                 ]
             },
@@ -2064,7 +2064,7 @@ def test_docstring(docstring, description):
                     {'type': 'number', 'minimum': 2},
                     {
                         'type': 'string',
-                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
                     },
                 ]
             },
@@ -2077,7 +2077,7 @@ def test_docstring(docstring, description):
                     {'type': 'number', 'maximum': 5},
                     {
                         'type': 'string',
-                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
                     },
                 ]
             },
@@ -2090,7 +2090,7 @@ def test_docstring(docstring, description):
                     {'type': 'number', 'multipleOf': 5},
                     {
                         'type': 'string',
-                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
                     },
                 ]
             },
@@ -2139,7 +2139,7 @@ def test_constraints_schema_validation(kwargs, type_, expected_extra):
             Decimal,
             {
                 'type': 'string',
-                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
             },
         ),
         (
@@ -2147,7 +2147,7 @@ def test_constraints_schema_validation(kwargs, type_, expected_extra):
             Decimal,
             {
                 'type': 'string',
-                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
             },
         ),
         (
@@ -2155,7 +2155,7 @@ def test_constraints_schema_validation(kwargs, type_, expected_extra):
             Decimal,
             {
                 'type': 'string',
-                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
             },
         ),
         (
@@ -2163,7 +2163,7 @@ def test_constraints_schema_validation(kwargs, type_, expected_extra):
             Decimal,
             {
                 'type': 'string',
-                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
             },
         ),
         (
@@ -2171,7 +2171,7 @@ def test_constraints_schema_validation(kwargs, type_, expected_extra):
             Decimal,
             {
                 'type': 'string',
-                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
             },
         ),
     ],
@@ -5976,14 +5976,14 @@ def test_generate_definitions_for_no_ref_schemas():
         {
             ('Decimal', 'serialization'): {
                 'type': 'string',
-                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
             },
             ('Decimal', 'validation'): {
                 'anyOf': [
                     {'type': 'number'},
                     {
                         'type': 'string',
-                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$',
+                        'pattern': '^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*(?:[eE][+-]?\\d+)?$',
                     },
                 ]
             },
